@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Main = styled.div`  
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  justify-content: center;
+`;
+
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;

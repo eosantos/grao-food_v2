@@ -3,14 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 110vh;
+  justify-content: start;
+  flex-direction: column;  
   gap: 20px;
+  padding-top: 100px;
 `;
-
-export const CardRestaurant = styled.div`
-  gap: 20px;
-`;
-
-export const Title = styled.h2``;

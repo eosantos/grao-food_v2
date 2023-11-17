@@ -41,12 +41,14 @@ const Home = () => {
       <Header />
       <Search onSearch={handleSearch} />
 
+     
       <CardRestaurant
         title="Título do Card"
         description="Descrição do Card"
-        restaurants={data}
+        restaurants={data}        
         onClick={() => [redirectProduct("/products.id")]}
-      />
+      />   
+
 
       {/* <C.Title>Home</C.Title>
       <Button

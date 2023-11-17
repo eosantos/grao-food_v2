@@ -46,20 +46,46 @@ const Products = ({ restaurants, products }) => {
       <C.Title>Pratos</C.Title>
       {/* <C.CarouselWrapper>
         <Slider {...settings}> */}
-      <ProductCard
-        imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
-        title="Strogonof"
-        description="Carne, Arroz, Feijão, Batata Frita"
-        price="R$ 18,99"
-      />
+      <C.Teste>
+        <ProductCard
+          imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
+          title="Strogonof"
+          description="Carne, Arroz, Feijão, Batata Frita"
+          price="R$ 18,99"
+        />
+        <ProductCard
+          imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
+          title="Strogonof"
+          description="Carne, Arroz, Feijão, Batata Frita"
+          price="R$ 18,99"
+        />
+        <ProductCard
+          imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
+          title="Strogonof"
+          description="Carne, Arroz, Feijão, Batata Frita"
+          price="R$ 18,99"
+        />
+      </C.Teste>
       {/* </Slider>
       </C.CarouselWrapper> */}
       <C.Title>Bebidas</C.Title>
-      <ProductCard
-        imageUrl="https://riomarrecife.com.br/recife/2019/09/CIA-142.jpg"
-        title="Água"
-        price="R$ 3,99"
-      />
+      <C.Teste>
+        <ProductCard
+          imageUrl="https://riomarrecife.com.br/recife/2019/09/CIA-142.jpg"
+          title="Água"
+          price="R$ 3,99"
+        />
+        <ProductCard
+          imageUrl="https://riomarrecife.com.br/recife/2019/09/CIA-142.jpg"
+          title="Água"
+          price="R$ 3,99"
+        />
+        <ProductCard
+          imageUrl="https://riomarrecife.com.br/recife/2019/09/CIA-142.jpg"
+          title="Água"
+          price="R$ 3,99"
+        />
+      </C.Teste>
       {/* <C.Title>Products</C.Title> */}
       <Button Text="Voltar" onClick={() => [navigate("/home")]}>
         Voltar

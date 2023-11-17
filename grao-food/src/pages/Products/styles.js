@@ -5,13 +5,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 110vh;
+  padding-top: 85px;
   gap: 20px;
 `;
 
 export const Title = styled.h2`
-  align-self: baseline;
-  margin-left: 30px;
+  align-self: center;
   font-size: 16px;
 `;
 
@@ -20,4 +19,11 @@ export const CarouselWrapper = styled.div`
   .slick-slide {
     padding: 0 10px;
   }
+`;
+
+export const Teste = styled.div`  
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  justify-content: center;
 `;

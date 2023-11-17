@@ -29,12 +29,30 @@ export const label = styled.label`
   &:nth-child(1) {
     font-size: 16px;
     color: #000000;
+
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
   }
   &:nth-child(2) {
     font-size: 14px;
     color: #8cc63f;
     margin-top: 9px;
+
+    @media (max-width: 375px) {
+      font-size: 12x;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 11px;
+    }
   }
+
+  
 `;
 
 export const div = styled.div`

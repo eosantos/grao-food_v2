@@ -7,23 +7,25 @@ const ProductCard = ({ imageUrl, title, description, price, restaurants }) => {
   console.log(restaurants);
   return (
     <div>
-      {/* {restaurants &&
-        restaurants.map((data) => ( */}
-      <C.CardContainer>
-        <C.CardImage src={imageUrl} alt={title} />
-        <C.CardBody>
-          <C.CardTitle>{title}</C.CardTitle>
-          <C.CardDescription>{description}</C.CardDescription>
-          <C.CardPrice>{price}</C.CardPrice>
-        </C.CardBody>
-        {/* <C.CardImage src={data.imageProduct} alt={"Imagem do Produto"} />
-            <C.CardBody>
-              <C.CardTitle>{data.id}</C.CardTitle>
-              <C.CardDescription>{data.nameProduct}</C.CardDescription>
-              <C.CardPrice>{data.priceProduct}</C.CardPrice>
-            </C.CardBody> */}
-      </C.CardContainer>
-      {/* ))} */}
+      <C.Main>
+        {/* {restaurants &&
+          restaurants.map((data) => ( */}
+        <C.CardContainer>
+          <C.CardImage src={imageUrl} alt={title} />
+          <C.CardBody>
+            <C.CardTitle>{title}</C.CardTitle>
+            <C.CardDescription>{description}</C.CardDescription>
+            <C.CardPrice>{price}</C.CardPrice>
+          </C.CardBody>
+          {/* <C.CardImage src={data.imageProduct} alt={"Imagem do Produto"} />
+              <C.CardBody>
+                <C.CardTitle>{data.id}</C.CardTitle>
+                <C.CardDescription>{data.nameProduct}</C.CardDescription>
+                <C.CardPrice>{data.priceProduct}</C.CardPrice>
+              </C.CardBody> */}
+        </C.CardContainer>
+        {/* ))} */}
+      </C.Main>
     </div>
   );
 };

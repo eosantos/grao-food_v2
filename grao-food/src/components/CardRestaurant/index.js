@@ -57,30 +57,32 @@ const CardRestaurant = ({ restaurants }) => {
 
   return (
     <div>
-      {restaurants &&
-        restaurants.map((data) => (
-          <C.CardContainer
-            key={data.id}
-            onClick={() => [navigate("/products")]}
-          >
-            <C.Image src={data.image} alt="Imagem do Card" />
-            <C.Description>
-              <C.Avatar src={data.avatar} alt="Avatar do autor" />
-              <C.Title>
-                <strong>{data.name}</strong>
-                <p>{data.description}</p>
-              </C.Title>
-              <C.Icons>
-                <StarPurple500OutlinedIcon />
-                <strong>{data.stars}</strong>
-                <QueryBuilderOutlinedIcon />
-                <strong>{data.deliveryTime}</strong>
-                <PaidIcon />
-                <strong>{data.deliveryPrice}</strong>
-              </C.Icons>
-            </C.Description>
-          </C.CardContainer>
-        ))}
+      <C.Main>
+        {restaurants &&
+          restaurants.map((data) => (
+            <C.CardContainer
+              key={data.id}
+              onClick={() => [navigate("/products")]}
+            >
+              <C.Image src={data.image} alt="Imagem do Card" />
+              <C.Description>
+                <C.Avatar src={data.avatar} alt="Avatar do autor" />
+                <C.Title>
+                  <strong>{data.name}</strong>
+                  <p>{data.description}</p>
+                </C.Title>
+                <C.Icons>
+                  <StarPurple500OutlinedIcon />
+                  <strong>{data.stars}</strong>
+                  <QueryBuilderOutlinedIcon />
+                  <strong>{data.deliveryTime}</strong>
+                  <PaidIcon />
+                  <strong>{data.deliveryPrice}</strong>
+                </C.Icons>
+              </C.Description>
+            </C.CardContainer>
+          ))}
+        </C.Main>
     </div>
   );
 };
