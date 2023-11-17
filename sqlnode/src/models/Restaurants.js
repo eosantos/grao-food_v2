@@ -16,6 +16,10 @@ class Restaurants extends Model {
     })
   }
 
+  static associate(models) {
+    this.hasMany(models.Products, { foreignKey: 'restaurant_id', as: 'products' });
+  }
+
 }
 
 module.exports = Restaurants;
