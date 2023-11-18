@@ -48,3 +48,8 @@ export const CardPrice = styled.span`
   font-weight: 600;
   color: #8cc63f;
 `;
+
+export const Title = styled.h2`
+  align-self: center;
+  font-size: 16px;
+`;

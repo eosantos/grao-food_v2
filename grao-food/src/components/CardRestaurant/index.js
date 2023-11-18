@@ -15,7 +15,7 @@ const CardRestaurant = () => {
   useEffect(() => { 
     restaurantService.getAll({ mode: "'no-cors"})
       .then((response) => {
-        console.log(response.data);
+        console.log('============', response.data);
         setRestaurants(response.data);
       }).catch((error) => {
         console.log(error);
@@ -76,7 +76,7 @@ const CardRestaurant = () => {
           restaurants.map((data) => (
             <C.CardContainer
               key={data.id}
-              onClick={() => [navigate("/products")]}
+              onClick={() => [navigate(`/restaurants/${data.id}/products`)]}
             >
               <C.Image src={data.image} alt="Imagem do Card" />
               <C.Description>

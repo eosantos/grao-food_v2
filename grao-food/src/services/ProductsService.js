@@ -1,11 +1,11 @@
 import axios from "axios"
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:3333"
+  baseURL: "http://localhost:3333/restaurants"
 })
 
 export class ProductsService {
-  getAll(){
-    return axiosInstance.get("/products")
+  getAll(id){
+    return axiosInstance.get(`/${id}/products`)
   }
 }

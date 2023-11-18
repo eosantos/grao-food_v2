@@ -1,6 +1,6 @@
 import * as C from "./styles";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import Header from "../../components/Header";
 import CardRestaurant from "../../components/CardRestaurant";
 import Button from "../../components/Button";
@@ -27,41 +27,35 @@ const Home = () => {
     );
   };
 
-  const redirectProduct = (e) => {
-    console.log(e);
-    navigate("/products.id");
-  };
-
   if (data.length === 0) {
     setData(restaurants);
+
   }
+  
+  //const history = useNavigate()
+
+  const handleRestaurantClick = (restaurant_id) => {
+    // Redirecionar para a página de produtos com o ID do restaurante
+    navigate(`/restaurants/${restaurant_id}/products`);
+  };
+  
 
   return (
     <C.Container>
       <Header />
       <Search onSearch={handleSearch} />
-
      
       <CardRestaurant
         title="Título do Card"
         description="Descrição do Card"
-        restaurants={data}        
-        onClick={() => [redirectProduct("/products.id")]}
-      />   
+        restaurants={data}                
+        onClick={(restaurant_id) => handleRestaurantClick(restaurant_id)}
+      />                      
 
-
-      {/* <C.Title>Home</C.Title>
-      <Button
-        Text="Products"
-        onClick={() => {
-          redirectProduct();
-        }}
-      >
-        Products
-      </Button> */}
       <Button Text="Sair" onClick={() => [signout(), navigate("/")]}>
         Sair
       </Button>
+
     </C.Container>
   );
 };

@@ -18,7 +18,7 @@ const RoutesApp = () => {
       <Fragment>
         <Routes>
           <Route exact path="/home" element={<Private Item={Home} />} />
-          <Route exact path="/products" element={<Private Item={Products} />} />
+          <Route exact path="/restaurants/:id/products" element={<Private Item={Products} />} />
           <Route path="/" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route path="*" element={<Signin />} />

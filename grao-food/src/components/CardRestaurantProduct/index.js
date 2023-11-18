@@ -1,27 +1,49 @@
-import React from "react";
-import bgrestaurant from "../../assets/bgrestaurant001.png";
-//import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
-import avatar from "../../assets/avatar001.png";
-
 import * as C from "./styles";
 
+import React, { useEffect, useState } from "react";
+import { RestaurantsService } from "../../services/RestaurantsService";
+import { useLocation } from "react-router-dom";
 
-const CardRestaurant = ({ imageSrc, avatarSrc, title, description }) => {
+const CardRestaurantProduct = () => {
+  const [restaurants, setRestaurants] = useState([]);
+  const restaurantService = new RestaurantsService();
+
+  const location = useLocation();
+  const pathname = location.pathname.split('/')
+  
+  console.log('location', location);  
+  console.log('pathname', pathname); 
+
+  useEffect(() => { 
+    restaurantService.getAll({ mode: "'no-cors"})
+      .then((response) => {
+        console.log(response.data);
+        setRestaurants(response.data);
+      }).catch((error) => {
+        console.log(error);
+    })
+  }, [])
+
   return (
-    <C.CardContainer>
-      <C.Image src={bgrestaurant} alt="Imagem do Card" />
-      <C.Description>
-        <C.Avatar src={avatar} alt="Avatar do autor" />
-        <C.Title>
-          <strong>Restaurant</strong>
-          <p>Comida brasileira</p>
-        <C.label>                    
-           <C.StyledIcon />Av. Leopoldinho de Oliveira                      
-        </C.label>
-        </C.Title>
-      </C.Description>
-    </C.CardContainer>
+    <div>
+      {restaurants &&
+        restaurants.filter((restaurant) => restaurant.id == pathname[2]).map((data) => (
+        <C.CardContainer>
+          <C.Image src={data.image} alt="Imagem do Card" />
+          <C.Description>
+            <C.Avatar src={data.avatar} alt="Avatar do autor" />
+            <C.Title>
+              <strong>{data.name}</strong>
+              <p>{data.sub_name}</p>
+            <C.label>                    
+              <C.StyledIcon />{data.addresses}                      
+            </C.label>
+            </C.Title>
+          </C.Description>
+        </C.CardContainer>
+      ))}
+    </div>
   );
 };
 
-export default CardRestaurant;
+export default CardRestaurantProduct;

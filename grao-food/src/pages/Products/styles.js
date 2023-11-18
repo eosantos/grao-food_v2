@@ -9,11 +9,6 @@ export const Container = styled.div`
   gap: 20px;
 `;
 
-export const Title = styled.h2`
-  align-self: center;
-  font-size: 16px;
-`;
-
 export const CarouselWrapper = styled.div`
   display: flex;
   .slick-slide {
