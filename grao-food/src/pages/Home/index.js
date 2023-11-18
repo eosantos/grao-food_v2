@@ -1,3 +1,4 @@
+import * as C from "./styles";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
@@ -7,13 +8,12 @@ import Search from "../../components/Search";
 import useAuth from "../../hooks/useAuth";
 import restaurants from "../../utils/dataRestaurant";
 
-import * as C from "./styles";
-
 const Home = () => {
   const { signout } = useAuth();
   const navigate = useNavigate();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]);  
+
 
   const handleSearch = (searchTerm) => {
     // Execute a busca com o termo de pesquisa

@@ -47,12 +47,12 @@ const Products = ({ restaurants, products }) => {
       {/* <C.CarouselWrapper>
         <Slider {...settings}> */}
       <C.Teste>
-        <ProductCard
-          imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
-          title="Strogonof"
-          description="Carne, Arroz, Feijão, Batata Frita"
-          price="R$ 18,99"
-        />
+        {/* <ProductCard
+          title="Título do Card"
+          description="Descrição do Card"
+          products={data}
+        /> */}
+
         <ProductCard
           imageUrl="https://www.sabornamesa.com.br/media/k2/items/cache/c910db2cadeb7dd44121f01e6d7b155d_XL.jpg"
           title="Strogonof"

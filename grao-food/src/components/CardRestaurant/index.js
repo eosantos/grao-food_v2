@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import StarPurple500OutlinedIcon from "@mui/icons-material/StarPurple500Outlined";
 import QueryBuilderOutlinedIcon from "@mui/icons-material/QueryBuilderOutlined";
 import PaidIcon from "@mui/icons-material/Paid";
 import { useNavigate } from "react-router-dom";
+import { RestaurantsService } from "../../services/RestaurantsService";
 
 import * as C from "./styles";
 
-const CardRestaurant = ({ restaurants }) => {
+const CardRestaurant = () => {
   const navigate = useNavigate();
-  console.log(restaurants);
+  const [restaurants, setRestaurants] = useState([]);
+  const restaurantService = new RestaurantsService();
+
+  useEffect(() => { 
+    restaurantService.getAll({ mode: "'no-cors"})
+      .then((response) => {
+        console.log(response.data);
+        setRestaurants(response.data);
+      }).catch((error) => {
+        console.log(error);
+    })
+  }, [])
+
+  //console.log(restaurants);
   // console.log("teste");
 
   // var rests = restaurants;
@@ -39,19 +53,19 @@ const CardRestaurant = ({ restaurants }) => {
 
   //pratos =
 
-  const ID_RESTAURANT = "01";
+  // const ID_RESTAURANT = "01";
 
-  const restaurant = restaurants.find((item) => (item.id = ID_RESTAURANT));
+  // const restaurant = restaurants.find((item) => (item.id = ID_RESTAURANT));
 
-  console.log(restaurant);
+  // console.log(restaurant);
 
-  const pratos = restaurant.products.pratos;
+  // const pratos = restaurant.products.pratos;
 
-  console.log(pratos);
+  // console.log(pratos);
 
-  const bebidas = restaurant.products.bebidas;
+  // const bebidas = restaurant.products.bebidas;
 
-  console.log(bebidas);
+  // console.log(bebidas);
 
   // console.log(rests[0].products[0].pratos[0]);
 
@@ -69,15 +83,15 @@ const CardRestaurant = ({ restaurants }) => {
                 <C.Avatar src={data.avatar} alt="Avatar do autor" />
                 <C.Title>
                   <strong>{data.name}</strong>
-                  <p>{data.description}</p>
+                  <p>{data.sub_name}</p>
                 </C.Title>
                 <C.Icons>
                   <StarPurple500OutlinedIcon />
                   <strong>{data.stars}</strong>
                   <QueryBuilderOutlinedIcon />
-                  <strong>{data.deliveryTime}</strong>
+                  <strong>{data.delivery_time}</strong>
                   <PaidIcon />
-                  <strong>{data.deliveryPrice}</strong>
+                  <strong>{data.delivery_price}</strong>
                 </C.Icons>
               </C.Description>
             </C.CardContainer>
