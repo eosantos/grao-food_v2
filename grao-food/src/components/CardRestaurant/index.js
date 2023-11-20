@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import StarPurple500OutlinedIcon from "@mui/icons-material/StarPurple500Outlined";
 import QueryBuilderOutlinedIcon from "@mui/icons-material/QueryBuilderOutlined";
 import PaidIcon from "@mui/icons-material/Paid";
 import { useNavigate } from "react-router-dom";
-import { RestaurantsService } from "../../services/RestaurantsService";
-
 import * as C from "./styles";
 
-const CardRestaurant = () => {
+const CardRestaurant = ({ restaurants }) => {
   const navigate = useNavigate();
-  const [restaurants, setRestaurants] = useState([]);
-  const restaurantService = new RestaurantsService();
-
-  useEffect(() => { 
-    restaurantService.getAll({ mode: "'no-cors"})
-      .then((response) => {
-        //console.log(response.data);
-        setRestaurants(response.data);
-      }).catch((error) => {
-        console.log(error);
-    })
-  }, [])
-
 
   return (
     <div>
@@ -30,7 +15,7 @@ const CardRestaurant = () => {
           restaurants.map((data) => (
             <C.CardContainer
               key={data.id}
-              onClick={() => [navigate(`/restaurants/${data.id}/products`)]}
+              onClick={() => navigate(`/restaurants/${data.id}/products`)}
             >
               <C.Image src={data.image} alt="Imagem do Card" />
               <C.Description>
@@ -50,7 +35,7 @@ const CardRestaurant = () => {
               </C.Description>
             </C.CardContainer>
           ))}
-        </C.Main>
+      </C.Main>
     </div>
   );
 };
