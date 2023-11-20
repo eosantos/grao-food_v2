@@ -52,4 +52,5 @@ export const CardPrice = styled.span`
 export const Title = styled.h2`
   align-self: center;
   font-size: 16px;
+  margin: 20px; 0 20px 0;
 `;

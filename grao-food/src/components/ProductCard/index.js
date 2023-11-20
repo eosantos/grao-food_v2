@@ -25,9 +25,9 @@ const ProductCard = ({ restaurant_id } ) => {
         <C.CardContainer key={data.id}>          
           <C.CardImage src={data.image_product} alt={"Imagem do Produto"} />
           <C.CardBody>
-            <C.CardTitle>{data.id}</C.CardTitle>
-            <C.CardDescription>{data.name}</C.CardDescription>
-            <C.CardPrice>{data.price}</C.CardPrice>
+            <C.CardTitle>{data.name}</C.CardTitle>
+            <C.CardDescription>{data.description}</C.CardDescription>
+            <C.CardPrice>R$ {data.price.toFixed(2)}</C.CardPrice>
           </C.CardBody>
         </C.CardContainer>
         ))}
@@ -39,9 +39,8 @@ const ProductCard = ({ restaurant_id } ) => {
         <C.CardContainer key={data.id}>          
           <C.CardImage src={data.image_product} alt={"Imagem do Produto"} />
           <C.CardBody>
-            <C.CardTitle>{data.id}</C.CardTitle>
-            <C.CardDescription>{data.name}</C.CardDescription>
-            <C.CardPrice>{data.price}</C.CardPrice>
+            <C.CardTitle>{data.name}</C.CardTitle>
+            <C.CardPrice>R$ {data.price.toFixed(2)}</C.CardPrice>
           </C.CardBody>
         </C.CardContainer>
         ))}

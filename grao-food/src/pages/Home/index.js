@@ -29,17 +29,13 @@ const Home = () => {
 
   if (data.length === 0) {
     setData(restaurants);
-
   }
-  
-  //const history = useNavigate()
 
   const handleRestaurantClick = (restaurant_id) => {
     // Redirecionar para a página de produtos com o ID do restaurante
     navigate(`/restaurants/${restaurant_id}/products`);
   };
   
-
   return (
     <C.Container>
       <Header />

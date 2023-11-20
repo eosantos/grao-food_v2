@@ -10,9 +10,6 @@ const CardRestaurantProduct = () => {
 
   const location = useLocation();
   const pathname = location.pathname.split('/')
-  
-  console.log('location', location);  
-  console.log('pathname', pathname); 
 
   useEffect(() => { 
     restaurantService.getAll({ mode: "'no-cors"})

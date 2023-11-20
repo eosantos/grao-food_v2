@@ -17,19 +17,14 @@ const Products = ({ restaurants, products }) => {
   return (
     <C.Container>
       <Header />
-      <CardRestaurantProduct />
-
+      <CardRestaurantProduct />      
+      <ProductCard
+        title="Título do Card"
+        description="Descrição do Card"
+        restaurant_id={Number(pathname[2])}
+      />
       
-        <ProductCard
-          title="Título do Card"
-          description="Descrição do Card"
-          restaurant_id={Number(pathname[2])}
-        />
-      
-      
-
-
-      <Button Text="Voltar" onClick={() => [navigate("/home")]}>
+      <Button Text="Voltar" onClick={() => [navigate("/home")]} >
         Voltar
       </Button>
     </C.Container>

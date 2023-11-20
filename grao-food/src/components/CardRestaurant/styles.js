@@ -5,6 +5,7 @@ export const Main = styled.div`
   flex-wrap: wrap; 
   gap: 20px;
   justify-content: center;
+  max-width: 1200px
 `;
 
 export const CardContainer = styled.div`

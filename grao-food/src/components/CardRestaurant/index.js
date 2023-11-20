@@ -15,59 +15,13 @@ const CardRestaurant = () => {
   useEffect(() => { 
     restaurantService.getAll({ mode: "'no-cors"})
       .then((response) => {
-        console.log('============', response.data);
+        //console.log(response.data);
         setRestaurants(response.data);
       }).catch((error) => {
         console.log(error);
     })
   }, [])
 
-  //console.log(restaurants);
-  // console.log("teste");
-
-  // var rests = restaurants;
-
-  // data = data
-  //   .filter(function (item) {
-  //     return item.id === "01";
-  //   })
-  //   .map(function ({ id, name }) {
-  //     return { id, name };
-  //   });
-  // console.log(data);
-
-  // rests = rests
-  //   .filter(function (item) {
-  //     return item.id === "01";
-  //   })
-  //   .map(function ({ name, description, stars, products }) {
-  //     return { name, description, stars, products };
-  //   });
-  // console.log(rests);
-
-  // var prods = rests.products.map(function ({ pratos }) {
-  //   return { pratos };
-  // });
-
-  // console.log(prods);
-
-  //pratos =
-
-  // const ID_RESTAURANT = "01";
-
-  // const restaurant = restaurants.find((item) => (item.id = ID_RESTAURANT));
-
-  // console.log(restaurant);
-
-  // const pratos = restaurant.products.pratos;
-
-  // console.log(pratos);
-
-  // const bebidas = restaurant.products.bebidas;
-
-  // console.log(bebidas);
-
-  // console.log(rests[0].products[0].pratos[0]);
 
   return (
     <div>
@@ -91,7 +45,7 @@ const CardRestaurant = () => {
                   <QueryBuilderOutlinedIcon />
                   <strong>{data.delivery_time}</strong>
                   <PaidIcon />
-                  <strong>{data.delivery_price}</strong>
+                  <strong>R$ 7,00</strong>
                 </C.Icons>
               </C.Description>
             </C.CardContainer>
