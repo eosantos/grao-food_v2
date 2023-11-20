@@ -17,6 +17,7 @@ const Home = () => {
 
   const [restaurants, setRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     // Carregue todos os restaurantes quando a página for carregada
@@ -31,6 +32,19 @@ const Home = () => {
       });
   }, []);
 
+  useEffect(() => {
+    // Seta todos os produtos    
+    restaurantService.getAllProducts()
+      .then((response) => {
+        console.log("Dados de produtos recebidos:", response);
+        setProducts(response.data); // Mostrar todos os produtos
+      })
+      .catch((error) => {
+        console.error("Erro ao obter dados de produtos:", error);
+      });
+  }, []);
+
+
   const handleSearch = (searchTerm) => {
     console.log(`Buscando por: ${searchTerm}`);
     
@@ -39,10 +53,28 @@ const Home = () => {
       setFilteredRestaurants(restaurants);
     } else {
       // Filtrar restaurantes com base no termo de pesquisa
-      const search = restaurants.filter(
+      const searchByRestaurants = restaurants.filter(
         (restaurant) => restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ).map((restaurant) => restaurant.id)
+      // Filtra restaurantes com base no nome dos produtos     
+      const searchByProductName = products.filter(
+        (product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ).map((product) => product.restaurant_id)
+      // Filtra restaurantes com base no descrição dos produtos
+      const searchByProductDescription = products.filter(
+        (product) => product.description.toLowerCase().includes(searchTerm.toLowerCase())
+      ).map((product) => product.restaurant_id)
+
+      const concat1 = searchByRestaurants.concat(searchByProductName) // concatena o resultado da busca por nome dos restaurantes com a busca por nome do produto
+      const concat2 = concat1.concat(searchByProductDescription) // concatena o resultado da busca por descrição do produto com os resultados acima;
+      const search = concat2.filter((item, index) => concat2.indexOf(item) === index); // remove os ids de restaurantes duplicados
+
+      // Filtra os restaurantes que correspondem aos critérios acima especificados.
+      const results = restaurants.filter(
+        (restaurant) => search.includes(restaurant.id)
       );
-      setFilteredRestaurants(search);
+      
+      setFilteredRestaurants(results);
     }
   };
 

@@ -13,6 +13,12 @@ module.exports = {
     return res.json(restaurant.products);
   },
 
+  async getAllProducts(req, res) {
+    const products = await Products.findAll();
+
+    return res.json(products);
+  },
+
   async store(req, res) {
     const { restaurant_id } = req.params;
     const { type, name, description, image_product, price } = req.body;

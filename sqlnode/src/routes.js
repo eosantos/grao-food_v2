@@ -14,5 +14,6 @@ routes.post('/restaurants', RestaurantsController.store);
 
 routes.get('/restaurants/:restaurant_id/products', ProductsController.index);
 routes.post('/restaurants/:restaurant_id/products', ProductsController.store);
+routes.get('/products', ProductsController.getAllProducts);
 
 module.exports = routes;

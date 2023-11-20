@@ -7,5 +7,5 @@ export const axiosInstance = axios.create({
 export class ProductsService {
   getAll(id){
     return axiosInstance.get(`/${id}/products`)
-  }
+  } 
 }

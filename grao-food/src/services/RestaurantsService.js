@@ -8,4 +8,8 @@ export class RestaurantsService {
   getAll(){
     return axiosInstance.get("/restaurants")
   }
+  
+  getAllProducts(){
+    return axiosInstance.get("/products")
+  }
 }
