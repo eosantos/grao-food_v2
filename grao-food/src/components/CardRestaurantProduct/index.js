@@ -2,6 +2,7 @@ import * as C from "./styles";
 
 import React, { useEffect, useState } from "react";
 import { RestaurantsService } from "../../services/RestaurantsService";
+import CallIcon from '@mui/icons-material/Call';
 import { useLocation } from "react-router-dom";
 
 const CardRestaurantProduct = () => {
@@ -33,7 +34,7 @@ const CardRestaurantProduct = () => {
               <strong>{data.name}</strong>
               <p>{data.sub_name}</p>
             <C.label>                    
-              <C.StyledIcon />{data.addresses}                      
+              <C.StyledIcon />{data.addresses} | <CallIcon /> {data.telefone}                     
             </C.label>
             </C.Title>
           </C.Description>
