@@ -13,7 +13,7 @@ export const Button = styled.button`
   font-size: 16px;
   max-width: 300px;
   letter-spacing: 3px;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
 
   -webkit-box-shadow: 0px 9px 7px -6px rgba(0, 0, 0, 0.16);

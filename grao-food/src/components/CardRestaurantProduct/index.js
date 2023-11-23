@@ -26,7 +26,7 @@ const CardRestaurantProduct = () => {
     <div>
       {restaurants &&
         restaurants.filter((restaurant) => restaurant.id == pathname[2]).map((data) => (
-        <C.CardContainer>
+        <C.CardContainer key={restaurants}>
           <C.Image src={data.image} alt="Imagem do Card" />
           <C.Description>
             <C.Avatar src={data.avatar} alt="Avatar do autor" />

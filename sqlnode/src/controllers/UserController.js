@@ -2,9 +2,17 @@ const User = require('../models/User');
 
 module.exports = {
   async index(req, res) {
-    const users = await User.findAll();
+    const { email, password } = req.body
+    const user = await User.findOne({
+      where: {
+        email: email,
+      },
+    });
 
-    return res.json(users);
+    if (!user) res.status(400).send({ message: 'e-mail ou password incorretos'})
+    if (user.password !== password) res.status(400).send({ message: 'e-mail ou password incorretos'})
+
+    return res.status(200).json(user);
   },
 
   async store(req, res) {
